@@ -2,12 +2,12 @@
 pragma solidity ^0.8.18;
 
 import {Test, console2} from "forge-std/Test.sol";
-import {BasicNFT} from "../src/BasicNFT.sol";
-import {DeployBasicNFT} from "../script/DeployBasicNFT.s.sol";
+import {BasicNft} from "../src/BasicNft.sol";
+import {DeployBasicNft} from "../script/DeployBasicNft.s.sol";
 
-contract BasicNFTTest is Test {
-    DeployBasicNFT public deployer;
-    BasicNFT public basicNft;
+contract BasicNftTest is Test {
+    DeployBasicNft public deployer;
+    BasicNft public basicNft;
 
     address public USER = makeAddr("user");
     uint256 public constant STARTING_USER_BALANCE = 10 ether;
@@ -15,7 +15,7 @@ contract BasicNFTTest is Test {
         "ipfs://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4/?filename=0-PUG.json";
 
     function setUp() public {
-        deployer = new DeployBasicNFT();
+        deployer = new DeployBasicNft();
         basicNft = deployer.run();
     }
 

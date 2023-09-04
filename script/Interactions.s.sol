@@ -2,7 +2,7 @@
 pragma solidity ^0.8.18;
 
 import {Script, console2} from "forge-std/Script.sol";
-import {BasicNFT} from "../src/BasicNFT.sol";
+import {BasicNft} from "../src/BasicNft.sol";
 import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
 
 contract MintBasicNft is Script {
@@ -19,7 +19,7 @@ contract MintBasicNft is Script {
 
     function mintNftOnContract(address contractAddress) public {
         vm.startBroadcast();
-        BasicNFT(contractAddress).mintNft(PUG);
+        BasicNft(contractAddress).mintNft(PUG);
         vm.stopBroadcast();
     }
 }
