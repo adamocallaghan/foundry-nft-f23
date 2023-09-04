@@ -1,12 +1,14 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
 import {Script, console2} from "forge-std/Script.sol";
+import {BasicNFT} from "../src/BasicNFT.sol";
 
 contract DeployBasicNFT is Script {
-    function setUp() public {}
-
-    function run() public {
-        vm.broadcast();
+    function run() external returns (BasicNFT) {
+        vm.startBroadcast();
+        BasicNFT basicNft = new BasicNFT();
+        vm.stopBroadcast();
+        return basicNft;
     }
 }
